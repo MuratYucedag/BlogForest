@@ -10,9 +10,4 @@
     <ProjectReference Include="..\BlogForest.EntityLayer\BlogForest.EntityLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="EntityFramework\" />
-    <Folder Include="GenericRepository\" />
-  </ItemGroup>
-
 </Project>

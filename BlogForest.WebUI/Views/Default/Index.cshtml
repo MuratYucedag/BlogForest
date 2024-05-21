@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -11,7 +10,7 @@
 <body>
 
     <div id="wrapper">
-       
+
         @await Component.InvokeAsync("_TopbarComponentPartial")
 
         @await Component.InvokeAsync("_NavbarComponentPartial")
@@ -20,6 +19,8 @@
         <section class="section wb">
             <div class="container">
                 <div class="row">
+                    @await Component.InvokeAsync("_BlogListComponentPartial")
+
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-wrapper">
                             <div class="blog-list clearfix">
