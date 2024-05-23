@@ -12,8 +12,8 @@ namespace BlogForest.WebUI.Controllers
         }
         public IActionResult BlogDetail(int id)
         {
-            var value = _blogService.TGetById(id);
-            return View(value);
+            ViewBag.i = id;
+            return View();
         }
     }
 }
