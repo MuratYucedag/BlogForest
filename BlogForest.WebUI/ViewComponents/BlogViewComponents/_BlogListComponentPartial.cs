@@ -12,7 +12,7 @@ namespace BlogForest.WebUI.ViewComponents.BlogViewComponents
         }
         public IViewComponentResult Invoke()
         {
-            var values = _blogService.TGetListAll();
+            var values = _blogService.TGetBlogsWithCategoryAndUser();
             return View(values);
         }
     }
