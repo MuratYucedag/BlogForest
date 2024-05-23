@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Blog
+
+@{
     Layout = null;
 }
 
@@ -15,6 +17,8 @@
 
         @await Component.InvokeAsync("_NavbarComponentPartial")
 
+        @await Component.InvokeAsync("_BlogDetailComponentPartial")
+
 
         <section class="section wb">
             <div class="container">
@@ -24,7 +28,7 @@
                             <div class="blog-title-area">
                                 <span class="color-green"><a href="garden-category.html" title="">Gardening</a></span>
 
-                                <h3>The golden rules you need to know for a positive life</h3>
+                                <h3>@Model.Title</h3>
 
                                 <div class="blog-meta big-meta">
                                     <small><a href="garden-single.html" title="">21 July, 2017</a></small>
@@ -42,12 +46,12 @@
                             </div><!-- end title -->
 
                             <div class="single-post-media">
-                                <img src="upload/garden_single_01.jpg" alt="" class="img-fluid">
+                                <img src="@Model.ThumbnailImageUrl" alt="" class="img-fluid">
                             </div><!-- end media -->
 
                             <div class="blog-content">
                                 <div class="pp">
-                                    <p>In lobortis pharetra mattis. Morbi nec nibh iaculis, <a href="#">bibendum augue a</a>, ultrices nulla. Nunc velit ante, lacinia id tincidunt eget, faucibus nec nisl. In mauris purus, bibendum et gravida dignissim, venenatis commodo lacus. Duis consectetur quis nisi nec accumsan. Pellentesque enim velit, ut tempor turpis. Mauris felis neque, egestas in lobortis et,iaculis at nunc ac, rhoncus sagittis ipsum. </p>
+                                    <p>@Model.Description</p>
 
                                  
                                 </div><!-- end pp -->
