@@ -17,6 +17,9 @@ builder.Services.AddScoped<IBlogDal,EfBlogDal>();
 builder.Services.AddScoped<IAppUserService, AppUserManager>();
 builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
 
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogContext>();
 
 builder.Services.AddControllersWithViews();

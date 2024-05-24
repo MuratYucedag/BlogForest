@@ -25,7 +25,8 @@ namespace BlogForest.DataAccessLayer.EntityFramework
         public List<Blog> GetLast2BlogByAppUser(int id)
         {
             var context = new BlogContext();
-            var values = context.Blogs.Where(x => x.AppUserId == id).OrderByDescending(y => y.BlogId).Take(2).ToList();
+            int appUserID = context.Blogs.Where(x => x.BlogId == id).Select(y => y.AppUserId).FirstOrDefault();
+            var values = context.Blogs.Where(x => x.AppUserId == appUserID).OrderByDescending(y => y.BlogId).Take(2).ToList();
             return values;
         }
     }
