@@ -54,14 +54,19 @@ namespace BlogForest.WebUI.Controllers
         public IActionResult UpdateRole(int id)
         {
             var value = _roleManager.Roles.FirstOrDefault(x => x.Id == id);
-            return View(value);
+            UpdateRoleViewModel updateRoleViewModel = new UpdateRoleViewModel()
+            {
+                RoleId = value.Id,
+                RoleName = value.Name
+            };
+            return View(updateRoleViewModel);
         }
 
         [HttpPost]
         public async Task<IActionResult> UpdateRole(UpdateRoleViewModel updateRoleViewModel)
         {
-            var value=_roleManager.Roles.FirstOrDefault(x=>x.Id == updateRoleViewModel.Id);
-            value.Name= updateRoleViewModel.Name;
+            var value=_roleManager.Roles.FirstOrDefault(x=>x.Id == updateRoleViewModel.RoleId);
+            value.Name= updateRoleViewModel.RoleName;
             await _roleManager.UpdateAsync(value);
             return RedirectToAction("RoleList");
         }
